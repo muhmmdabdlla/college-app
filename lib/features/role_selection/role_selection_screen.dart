@@ -7,22 +7,48 @@ class RoleSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final roles = [
-      ('Student', Icons.school_rounded),
-      ('Parent', Icons.family_restroom_rounded),
-      ('Teacher', Icons.person_rounded),
-      ('College Admin', Icons.admin_panel_settings_rounded),
-      ('Public', Icons.language_rounded),
+      (
+        'Student',
+        'Academic information & attendance',
+        Icons.school_rounded,
+      ),
+      (
+        'Parent',
+        "Track your child's academic progress",
+        Icons.family_restroom_rounded,
+      ),
+      (
+        'Teacher',
+        'Manage classes & academic activities',
+        Icons.person_rounded,
+      ),
+      (
+        'College Admin',
+        'Manage the college & its operations',
+        Icons.admin_panel_settings_rounded,
+      ),
+      (
+        'Public',
+        'Explore MIC College & programs',
+        Icons.language_rounded,
+      ),
     ];
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_rounded),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: const Text(
           'Select Your Role',
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+          ),
         ),
       ),
       body: ListView.separated(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.fromLTRB(24, 18, 24, 32),
         itemCount: roles.length,
         separatorBuilder: (_, __) => const SizedBox(height: 14),
         itemBuilder: (context, index) {
@@ -30,9 +56,9 @@ class RoleSelectionScreen extends StatelessWidget {
 
           return Material(
             color: AppColors.surface,
-            borderRadius: BorderRadius.circular(18),
+            borderRadius: BorderRadius.circular(20),
             child: InkWell(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(20),
               onTap: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
@@ -43,29 +69,56 @@ class RoleSelectionScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
-                  vertical: 20,
+                  vertical: 18,
                 ),
                 child: Row(
                   children: [
-                    Icon(
-                      role.$2,
-                      color: AppColors.primaryBright,
-                      size: 28,
-                    ),
-                    const SizedBox(width: 18),
-                    Expanded(
-                      child: Text(
-                        role.$1,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.textPrimary,
-                        ),
+                    Container(
+                      width: 52,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        color: AppColors.primary.withValues(alpha: 0.10),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Icon(
+                        role.$3,
+                        color: AppColors.primaryBright,
+                        size: 27,
                       ),
                     ),
+
+                    const SizedBox(width: 16),
+
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            role.$1,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.textPrimary,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            role.$2,
+                            style: const TextStyle(
+                              fontSize: 13,
+                              height: 1.3,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    const SizedBox(width: 10),
+
                     const Icon(
                       Icons.arrow_forward_ios_rounded,
-                      size: 17,
+                      size: 16,
                       color: AppColors.textSecondary,
                     ),
                   ],
