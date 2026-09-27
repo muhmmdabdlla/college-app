@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../app/theme.dart';
+import '../student/login/student_login_screen.dart';
+import '../public/public_home_page.dart';
 
 class RoleSelectionScreen extends StatelessWidget {
   const RoleSelectionScreen({super.key});
@@ -60,11 +62,25 @@ class RoleSelectionScreen extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(20),
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('${role.$1} selected'),
-                  ),
-                );
+                if (role.$1 == 'Student') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const StudentLoginScreen(),
+                    ),
+                  );
+                } else if (role.$1 == 'Public') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const PublicHomePage(),
+                    ),
+                  );
+                }else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('${role.$1} section coming next'),
+                    ),
+                  );
+                }
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(
