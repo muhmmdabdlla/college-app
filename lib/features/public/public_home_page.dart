@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'public_pages.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'courses/courses_page.dart';
 
 class PublicHomePage extends StatelessWidget {
@@ -25,7 +26,14 @@ class PublicHomePage extends StatelessWidget {
         actions: [
           IconButton(
             tooltip: 'Notifications',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const PublicNotificationsPage(),
+                ),
+              );
+            },
             icon: const Icon(Icons.notifications_none_rounded),
           ),
         ],
@@ -121,17 +129,38 @@ class PublicHomePage extends StatelessWidget {
                 _QuickActionCard(
                   icon: Icons.assignment_outlined,
                   title: 'Admissions',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const AdmissionsPage(),
+                      ),
+                    );
+                  },
                 ),
                 _QuickActionCard(
                   icon: Icons.help_outline_rounded,
                   title: 'Enquiry',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const EnquiryPage(),
+                      ),
+                    );
+                  },
                 ),
                 _QuickActionCard(
                   icon: Icons.location_on_outlined,
                   title: 'Contact',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const ContactPage(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -219,7 +248,14 @@ class PublicHomePage extends StatelessWidget {
               icon: Icons.campaign_outlined,
               title: 'Notices',
               subtitle: 'Important announcements from the college.',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const NoticesPage(),
+                  ),
+                );
+              },
             ),
 
             const SizedBox(height: 10),
@@ -228,7 +264,14 @@ class PublicHomePage extends StatelessWidget {
               icon: Icons.event_outlined,
               title: 'Events',
               subtitle: 'Discover upcoming college events and activities.',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const EventsPage(),
+                  ),
+                );
+              },
             ),
 
             const SizedBox(height: 32),
@@ -272,7 +315,14 @@ class PublicHomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 18),
                   TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AboutMicPage(),
+                        ),
+                      );
+                    },
                     icon: const Icon(Icons.arrow_forward_rounded),
                     label: const Text('Explore College'),
                   ),
@@ -296,7 +346,14 @@ class PublicHomePage extends StatelessWidget {
               icon: Icons.location_on_outlined,
               title: 'Location',
               subtitle: 'MIC Arts & Science College',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const ContactPage(),
+                  ),
+                );
+              },
             ),
 
             const SizedBox(height: 10),
@@ -304,8 +361,22 @@ class PublicHomePage extends StatelessWidget {
             _ContactCard(
               icon: Icons.phone_outlined,
               title: 'Phone',
-              subtitle: 'Contact the college',
-              onTap: () {},
+              subtitle: '+91 83048 31094',
+              onTap: () async {
+                final uri = Uri(scheme: 'tel', path: '+918304831094');
+
+                if (await canLaunchUrl(uri)) {
+                  await launchUrl(uri);
+                } else {
+                  if (!context.mounted) return;
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Unable to open the phone dialler.'),
+                    ),
+                  );
+                }
+              },
             ),
 
             const SizedBox(height: 10),
@@ -313,8 +384,28 @@ class PublicHomePage extends StatelessWidget {
             _ContactCard(
               icon: Icons.email_outlined,
               title: 'Email',
-              subtitle: 'Send us an email',
-              onTap: () {},
+              subtitle: 'support@micchattanchal.com',
+              onTap: () async {
+                final uri = Uri(
+                  scheme: 'mailto',
+                  path: 'support@micchattanchal.com',
+                  queryParameters: {
+                    'subject': 'Enquiry - MIC College',
+                  },
+                );
+
+                if (await canLaunchUrl(uri)) {
+                  await launchUrl(uri);
+                } else {
+                  if (!context.mounted) return;
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Unable to open an email app.'),
+                    ),
+                  );
+                }
+              },
             ),
           ],
         ),
