@@ -67,8 +67,8 @@ const List<Course> collegeCourses = [
         'BCom Computer Application is an undergraduate programme combining commerce education with computer applications and modern digital technologies. It develops knowledge in accounting, business management, economics, finance, data handling, office productivity and digital business tools. It can prepare students for opportunities in commerce, accounting, business administration, banking, finance and IT-enabled services.',
 
     // These details need confirmation from the college.
-    duration: 'Confirm with the college',
-    eligibility: 'Confirm the current eligibility criteria with the college',
+    duration: '3 Years (6 Semesters)',
+    eligibility: 'Pass in Higher Secondary Examination (HSE / Plus Two) or an equivalent examination recognized by the Government of Kerala or Kannur University.',
 
     // Curriculum topics shown in your reference screenshots.
     // These are topics, NOT a verified semester-wise syllabus.
@@ -248,8 +248,8 @@ const List<Course> collegeCourses = [
     overview:
         'BCom Cooperation is an undergraduate commerce programme that focuses on cooperative principles, management, accounting, banking, finance, business administration, and cooperative law. The programme develops knowledge and practical skills required to manage and operate cooperative societies, financial institutions, banks, business organisations, and related sectors. Students gain a foundation in commerce alongside specialised knowledge of cooperative management and financial services.',
 
-    duration: 'Confirm with the college',
-    eligibility: 'Confirm the current eligibility criteria with the college',
+    duration: '3 Years (6 Semesters)',
+    eligibility: 'Pass in Higher Secondary Examination (HSE / Plus Two) or an equivalent examination recognized by the Government of Kerala or Kannur University.',
 
     // General curriculum topics based on your reference screenshots.
     // These are not a verified semester-wise syllabus.
@@ -424,8 +424,8 @@ const List<Course> collegeCourses = [
     overview:
         'Bachelor of Business Administration is an undergraduate programme designed to develop strong knowledge and practical skills in business management and administration. The programme covers management, accounting, economics, marketing, human resources, finance, entrepreneurship, business communication, computer applications, and digital business practices. It prepares students for careers in corporate organisations, banking, finance, marketing, human resources, sales, administration, entrepreneurship, and other business-related sectors.',
 
-    duration: 'Confirm with the college',
-    eligibility: 'Confirm the current eligibility criteria with the college',
+    duration: '3 Years (6 Semesters)',
+    eligibility: 'Pass in Higher Secondary Examination (HSE / Plus Two) or an equivalent examination recognized by the Government of Kerala or Kannur University.',
 
     // General curriculum topics based on the supplied screenshots.
     // This is not a verified semester-wise syllabus.
@@ -611,8 +611,8 @@ const List<Course> collegeCourses = [
     overview:
         'BSc Computer Science is an undergraduate programme that provides strong theoretical and practical knowledge in computer science, programming, networking, databases, artificial intelligence, cyber security, cloud computing, and software development. The programme prepares students for careers in IT industries, software companies, research, education, and higher studies.',
 
-    duration: 'Confirm with the college',
-    eligibility: 'Confirm the current eligibility criteria with the college',
+    duration: '3 Years (6 Semesters)',
+    eligibility: 'Pass in Plus Two / Equivalent examination in the Science stream. Must have studied Mathematics as one of the major subjects, along with Physics, Chemistry or Computer Science.',
 
     curriculum: [
       CurriculumSection(
@@ -786,8 +786,8 @@ const List<Course> collegeCourses = [
     overview:
         'Bachelor of Travel and Tourism Management (BTTM) is an undergraduate programme designed to provide students with comprehensive knowledge and practical skills in tourism, travel, hospitality, tour operations, destination management, airline ticketing, tourism marketing, and event management. The programme prepares students for careers in the tourism and hospitality industry in India and abroad.',
 
-    duration: 'Confirm with the college',
-    eligibility: 'Confirm the current eligibility criteria with the college',
+    duration: '3 Years (6 Semesters)',
+    eligibility: 'Pass in Higher Secondary Examination (HSE / Plus Two) or an equivalent examination recognized by the Government of Kerala or Kannur University.',
 
     curriculum: [
       CurriculumSection(
@@ -967,9 +967,8 @@ const List<Course> collegeCourses = [
     overview:
         'BA Economics is an undergraduate program that provides a comprehensive understanding of economic principles, theories, policies, markets, and economic development. The course develops analytical, quantitative, research, and problem-solving skills required to understand economic issues and make informed decisions. Students gain knowledge in microeconomics, macroeconomics, statistics, Indian economy, international economics, public economics, development economics, banking, finance, and modern economic analysis.',
 
-    duration: 'Confirm with the college',
-    eligibility:
-        'Confirm the current eligibility criteria with the college',
+    duration: '3 Years (6 Semesters)',
+    eligibility: 'Pass in Higher Secondary Examination (HSE / Plus Two) or an equivalent examination recognized by the Government of Kerala or Kannur University.',
 
     curriculum: [
       CurriculumSection(
@@ -1153,9 +1152,8 @@ const List<Course> collegeCourses = [
     overview:
         'BA English is an undergraduate program designed to develop a strong understanding of English language, literature, communication, and critical thinking. The course introduces students to poetry, drama, fiction, literary criticism, literary theory, Indian writing in English, creative writing, and professional communication. It develops language proficiency, analytical abilities, creativity, research skills, and communication skills required for academic and professional careers.',
 
-    duration: 'Confirm with the college',
-    eligibility:
-        'Confirm the current eligibility criteria with the college',
+    duration: '3 Years (6 Semesters)',
+    eligibility: 'Pass in Higher Secondary Examination (HSE / Plus Two) or an equivalent examination recognized by the Government of Kerala or Kannur University.',
 
     curriculum: [
       CurriculumSection(

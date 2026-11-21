@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../app/theme.dart';
 import '../student/login/student_login_screen.dart';
 import '../public/public_home_page.dart';
+import '../admin/login/admin_login_screen.dart';
 
 class RoleSelectionScreen extends StatelessWidget {
   const RoleSelectionScreen({super.key});
@@ -68,13 +69,19 @@ class RoleSelectionScreen extends StatelessWidget {
                       builder: (_) => const StudentLoginScreen(),
                     ),
                   );
+                } else if (role.$1 == 'College Admin') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const AdminLoginScreen(),
+                    ),
+                  );
                 } else if (role.$1 == 'Public') {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) => const PublicHomePage(),
                     ),
                   );
-                }else {
+                } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('${role.$1} section coming next'),
